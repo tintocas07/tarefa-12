@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Par ou Impar</title>
+</head>
+<body>
+    <center>
+        <h1>Tarefa 12</h1>
+        <p style="font-size: 18px;"><b>Introduza um número e será verificado se ele é par ou ímpar.</b></p>
+        <label for="n">Introduza um número inteiro:</label>
+        <input id="n" type="number" step="1"> 
+        <button onclick="compare()">Verificar</button>
+        <p id="text"></p>
+    </center>
+</body>
+<script>
+    function compare(){
+        var n
+        n = parseInt(document.getElementById("n").value)
+        if (n%2==0){
+            document.getElementById("text").innerText="O número é par." 
+            DoAnimation("blue", 700)
+        } else if (n%2==1)  {
+            document.getElementById("text").innerText="O número é impar."
+            DoAnimation("orange", 700)
+        }
+    }
+
+    function DoAnimation(cor, duracao) {
+        const body = document.body;   
+        body.style.transition = "background-color 1s";
+        body.style.backgroundColor = cor;
+        setTimeout(() => {
+        body.style.backgroundColor = "";
+    }, duracao);
+}
+</script>
+</html>
